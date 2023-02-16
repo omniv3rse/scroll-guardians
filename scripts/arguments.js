@@ -1,12 +1,12 @@
 module.exports = [
-    ["Swordsman", "Archer", "Wizard"],
-    ["QmRQLXwSLKqkE2p9ATum14jEVearEvku1QnB1qpdnD15rN/swordsman.png",
-    "QmRQLXwSLKqkE2p9ATum14jEVearEvku1QnB1qpdnD15rN/archer.png", 
-    "QmRQLXwSLKqkE2p9ATum14jEVearEvku1QnB1qpdnD15rN/wizard.png"],
+    ["Valkyrie", "Archer", "Sorceress"],
+    ["QmbRJACveMUERtQC4qPj8i8pErFWdCeTYrku1D1iejwxZp/swordsman.png",
+    "QmbRJACveMUERtQC4qPj8i8pErFWdCeTYrku1D1iejwxZp/archer.png", 
+    "QmbRJACveMUERtQC4qPj8i8pErFWdCeTYrku1D1iejwxZp/wizard.png"],
     [1000, 700, 500],
     [75, 100, 150],
-    "Bearwhale",
-    "QmVMvYLnhvx7dj5BidKUNovWfvoTkoCJgc4hV8w3zTEQtK",
-    100000,
+    "Shadowbeast",
+    "QmbRJACveMUERtQC4qPj8i8pErFWdCeTYrku1D1iejwxZp/boss.png",
+    250000,
     100
 ]

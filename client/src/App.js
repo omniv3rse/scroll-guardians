@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import twitterLogo from './assets/twitter-logo.svg';
+import banner from './assets/banner.png'
 import './App.css';
 import SelectCharacter from './Components/SelectCharacter';
 import { CONTRACT_ADDRESS, transformCharacterData } from './constants';
@@ -27,19 +28,6 @@ const App = () => {
   useEffect(() => {
     setIsLoading(true);
     checkIfWalletIsConnected();
-  }, []);
-
-  useEffect(() => {
-    const checkNetwork = async () => {
-      try { 
-        if (window.ethereum.networkVersion !== '534351') {
-          alert("Please connect to Scroll L1! (Pre-alpha)")
-        }
-      } catch(error) {
-        console.log(error)
-      }
-    }
-    checkNetwork();
   }, []);
 
   /*
@@ -70,13 +58,27 @@ const App = () => {
       setIsLoading(false);
     };
 
+    const checkNetwork = async () => {
+      try { 
+        if (window.ethereum.networkVersion !== '534351') {
+          alert("Please connect to Scroll L1! (Pre-alpha)")
+        }
+      } catch(error) {
+        console.log(error)
+      }
+    }
+    
+
     /*
     * We only want to run this, if we have a connected wallet
     */
     if (currentAccount) {
       console.log('CurrentAccount:', currentAccount);
       fetchNFTMetadata();
+      checkNetwork();
     }
+
+
   }, [currentAccount]);
 
   /*
@@ -134,7 +136,7 @@ const App = () => {
       return (
         <div className="connect-wallet-container">
           <img
-            src="https://i.imgur.com/Iv5YfGi.png"
+            src={banner}
             alt="Scroll Guardians by Adv3nture.xyz"
           />
           <button

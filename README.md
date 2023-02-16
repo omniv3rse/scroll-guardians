@@ -43,12 +43,7 @@ npx hardhat run scripts/deploy.js
 
 ## Characters
 
-Characters created with [Dreamstudio](https://beta.dreamstudio.ai/dream).
-
-Prompts:
-- [A **Swordsman** character in an RPG, by Studio Ghibli, matte painting trending on artstation HQ](https://i.imgur.com/Bix5oBT.png)
-- [An **Archer** character with a Bow in an RPG, by Studio Ghibli, matte painting trending on artstation HQ](https://i.imgur.com/LZRkouX.png)
-- [Full-body portrait of a **Wizard** character with a Wand in an RPG, by Studio Ghibli, matte painting trending on artstation HQ](https://i.imgur.com/L7IA4pp.png)
+Characters created with [Midjourney](https://midjourney.com).
 
 ## dotenv
 
@@ -65,6 +60,9 @@ PRIVATE_KEY="YOUR_PRIVATE_KEY_HERE"
 To be safe, use a fresh metamask account with no real-world assets.
 
 For Ethereum network node, use [Quicknode](https://www.quicknode.com/endpoints), Infura, or Alchemy etc.
+
+For Scroll Network L1 (Pre-alpha), use: https://prealpha-rpc.scroll.io/l1.
+
 
 ## Deploying on Goerli testnet
 
@@ -125,7 +123,7 @@ etherscan: {
 
 4. Verify
 ```
-npx hardhat verify --network arbitrumTestnet --constructor-args ./scripts/arguments.js 0x4174a2635Cd36C1730A1238d6eB0b6a4AA36f9aC
+npx hardhat verify --network goerli --constructor-args ./scripts/arguments.js 0xc9c56698d2Fd5eC0a684E177b1aE4EAD690b3AA0
 ```
 
 
@@ -136,10 +134,10 @@ npx hardhat verify --network arbitrumTestnet --constructor-args ./scripts/argume
 
 3. Use correct account key in `.env`
 
-4. To deploy, run `npx hardhat run scripts/deploy.js --network arbitrum`.
+4. To deploy, run `npx hardhat run scripts/deploy.js --network scrollPrealpha`.
 
 5. Update ABI file copy from `./artifacts/contracts/VanillaRaiders.sol/VanillaRaiders.json` to `./client/src/utils/VanillaRaiders.json`.
 
 6. Update Contract address to `./client/src/constants.js`.
 
-7. To verify, run `npx hardhat verify --network arbitrum --constructor-args ./scripts/arguments.js 0x17db58eb9598F3c798700b9099961Da09ebbba0E`.
+7. To verify, run `npx hardhat verify --network scrollPrealpha --constructor-args ./scripts/arguments.js 0x527CeDF38D29B67d38939d683950DE5479d57B97`.
