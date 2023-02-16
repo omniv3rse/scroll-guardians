@@ -32,13 +32,14 @@ const App = () => {
   useEffect(() => {
     const checkNetwork = async () => {
       try { 
-        if (window.ethereum.networkVersion !== '42161') {
-          alert("Please connect to Arbitrum One!")
+        if (window.ethereum.networkVersion !== '534351') {
+          alert("Please connect to Scroll L1! (Pre-alpha)")
         }
       } catch(error) {
         console.log(error)
       }
     }
+    checkNetwork();
   }, []);
 
   /*
