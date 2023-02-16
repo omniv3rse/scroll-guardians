@@ -3,7 +3,7 @@ import twitterLogo from './assets/twitter-logo.svg';
 import './App.css';
 import SelectCharacter from './Components/SelectCharacter';
 import { CONTRACT_ADDRESS, transformCharacterData } from './constants';
-import VanillaRaiders from './utils/VanillaRaiders.json';
+import ScrollGuardians from './utils/ScrollGuardians.json';
 import { ethers } from 'ethers';
 import Arena from './Components/Arena';
 import LoadingIndicator from './Components/LoadingIndicator';
@@ -55,7 +55,7 @@ const App = () => {
       const signer = provider.getSigner();
       const gameContract = new ethers.Contract(
         CONTRACT_ADDRESS,
-        VanillaRaiders.abi,
+        ScrollGuardians.abi,
         signer
       );
 
@@ -133,8 +133,8 @@ const App = () => {
       return (
         <div className="connect-wallet-container">
           <img
-            src="https://i.imgur.com/gOftJFs.png"
-            alt="Vanilla Raiders by Adventurers"
+            src="https://i.imgur.com/Iv5YfGi.png"
+            alt="Scroll Guardians by Adv3nture.xyz"
           />
           <button
             className="cta-button connect-wallet-button"
@@ -188,7 +188,7 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header gradient-text">⚔️ Vanilla Raiders ⚔️</p>
+          <p className="header gradient-text">📜 Scroll Guardians ⚔️</p>
           <p className="sub-text">Team up to protect the Metaverse!</p>
           {renderContent()}
         </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { CONTRACT_ADDRESS, transformCharacterData } from '../../constants';
-import VanillaRaiders from '../../utils/VanillaRaiders.json';
+import ScrollGuardians from '../../utils/ScrollGuardians.json';
 import './Arena.css';
 import LoadingIndicator from "../../Components/LoadingIndicator";
 
@@ -49,7 +49,7 @@ const Arena = ({ characterNFT, setCharacterNFT, currentAccount }) => {
       const signer = provider.getSigner();
       const gameContract = new ethers.Contract(
         CONTRACT_ADDRESS,
-        VanillaRaiders.abi,
+        ScrollGuardians.abi,
         signer
       );
 

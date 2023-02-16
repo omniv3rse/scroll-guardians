@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
-  "contractName": "VanillaRaiders",
-  "sourceName": "contracts/VanillaRaiders.sol",
+  "contractName": "ScrollGuardians",
+  "sourceName": "contracts/ScrollGuardians.sol",
   "abi": [
     {
       "inputs": [

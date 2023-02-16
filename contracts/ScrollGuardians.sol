@@ -1,20 +1,19 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-// NFT contract to inherit from.
+// NFT contract to inherit from
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-// Helper functions OpenZeppelin provides.
+// Helper functions OpenZeppelin provides
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-// Helper we wrote to encode in Base64
+// Helper to encode in Base64
 import "./libraries/Base64.sol";
 
 import "hardhat/console.sol";
 
-// Our contract inherits from ERC721, which is the standard NFT contract!
-contract VanillaRaiders is ERC721 {
+contract ScrollGuardians is ERC721 {
 
   struct CharacterAttributes {
     uint characterIndex;
@@ -25,24 +24,18 @@ contract VanillaRaiders is ERC721 {
     uint attackDamage;
   }
 
-  // The tokenId is the NFTs unique identifier, it's just a number that goes
-  // 0, 1, 2, 3, etc.
   using Counters for Counters.Counter;
   Counters.Counter private _tokenIds;
 
   CharacterAttributes[] defaultCharacters;
 
-  // We create a mapping from the nft's tokenId => that NFTs attributes.
   mapping(uint256 => CharacterAttributes) public nftHolderAttributes;
-
-  // A mapping from an address => the NFTs tokenId. Gives me an ez way
-  // to store the owner of the NFT and reference it later.
   mapping(address => uint256) public nftHolders;
 
   event CharacterNFTMinted(address sender, uint256 tokenId, uint256 characterIndex);
   event AttackComplete(address sender, uint newBossHp, uint newPlayerHp);
 
-  // Let’s first just build a basic boss struct and initialize its data, similar to how we did for our characters. 
+  // Build a basic boss struct and initialize its data.
   struct BigBoss {
     string name;
     string imageURI;
@@ -63,14 +56,10 @@ contract VanillaRaiders is ERC721 {
     string memory bossImageURI,
     uint bossHp,
     uint bossAttackDamage
-
-    // Below, you can also see I added some special identifier symbols for our NFT.
-    // This is the name and symbol for our token, ex Ethereum and ETH. I just call mine
-    // Heroes and HERO. Remember, an NFT is just a token!
   )
-    ERC721("Vanilla Raiders", "RAIDERS")
+    ERC721("Scroll Guardians", "SCROLL GUARDIAN")
   {
-    // Initialize the boss. Save it to our global "bigBoss" state variable.
+    // Initialize the boss. Save it to global "bigBoss" state variable.
     bigBoss = BigBoss({
       name: bossName,
       imageURI: bossImageURI,
@@ -98,22 +87,18 @@ contract VanillaRaiders is ERC721 {
       console.log("Done initializing %s w/ HP %s, img %s", c.name, c.hp, c.imageURI);
     }
 
-    // I increment _tokenIds here so that my first NFT has an ID of 1.
-    // More on this in the lesson!
     _tokenIds.increment();
   }
 
-  // Users would be able to hit this function and get their NFT based on the
-  // characterId they send in!
+  // For users to get their NFT based on the characterId they send in.
   function mintCharacterNFT(uint _characterIndex) external {
     // Get current tokenId (starts at 1 since we incremented in the constructor).
     uint256 newItemId = _tokenIds.current();
 
-    // The magical function! Assigns the tokenId to the caller's wallet address.
+    // Assigns the tokenId to the caller's wallet address.
     _safeMint(msg.sender, newItemId);
 
-    // We map the tokenId => their character attributes. More on this in
-    // the lesson below.
+    // Map the tokenId => their character attributes. 
     nftHolderAttributes[newItemId] = CharacterAttributes({
       characterIndex: _characterIndex,
       name: defaultCharacters[_characterIndex].name,
@@ -147,9 +132,9 @@ contract VanillaRaiders is ERC721 {
         abi.encodePacked(
         '{"name": "',
         charAttributes.name,
-        ' - Raider #',
+        ' - Guardian #',
         Strings.toString(_tokenId),
-        '", "description": "This is an NFT that lets people play in the game Vanilla Raiders by Adv3nture.xyz.", "image": "ipfs://',
+        '", "description": "This is an NFT that lets people play in the game Scroll Guardians by Adv3nture.xyz.", "image": "ipfs://',
         charAttributes.imageURI,
         '", "attributes": [ { "trait_type": "Health Points", "value": ',strHp,', "max_value":',strMaxHp,'}, { "trait_type": "Attack Damage", "value": ',
         strAttackDamage,'} ]}'
