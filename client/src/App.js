@@ -60,8 +60,8 @@ const App = () => {
 
     const checkNetwork = async () => {
       try { 
-        if (window.ethereum.networkVersion !== '534351') {
-          alert("Please connect to Scroll L1! (Pre-alpha)")
+        if (window.ethereum.networkVersion !== '534354') {
+          alert("Please connect to Scroll L2! (Pre-alpha)")
         }
       } catch(error) {
         console.log(error)

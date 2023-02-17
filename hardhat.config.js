@@ -5,8 +5,12 @@ require("@nomiclabs/hardhat-etherscan");
 module.exports = {
   solidity: '0.8.17',
   networks: {
-    scrollPrealpha: {
+    scrollL1: {
       url: `https://prealpha-rpc.scroll.io/l1`,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    scrollL2: {
+      url: `https://prealpha-rpc.scroll.io/l2`,
       accounts: [process.env.PRIVATE_KEY],
     },
     goerli: {

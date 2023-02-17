@@ -134,10 +134,10 @@ npx hardhat verify --network goerli --constructor-args ./scripts/arguments.js 0x
 
 3. Use correct account key in `.env`
 
-4. To deploy, run `npx hardhat run scripts/deploy.js --network scrollPrealpha`.
+4. To deploy, run `npx hardhat run scripts/deploy.js --network scrollL2`.
 
 5. Update ABI file copy from `./artifacts/contracts/VanillaRaiders.sol/VanillaRaiders.json` to `./client/src/utils/VanillaRaiders.json`.
 
 6. Update Contract address to `./client/src/constants.js`.
 
-7. To verify, run `npx hardhat verify --network scrollPrealpha --constructor-args ./scripts/arguments.js 0x527CeDF38D29B67d38939d683950DE5479d57B97`.
+7. To verify, run `npx hardhat verify --network scrollL2 --constructor-args ./scripts/arguments.js 0x4b8F5913F1dD81AE68AC8D332635Cbb4C7436f2a`.
