@@ -2,13 +2,13 @@ const main = async () => {
   const gameContractFactory = await hre.ethers.getContractFactory('ScrollGuardians');
   const gameContract = await gameContractFactory.deploy(
     ["Valkyrie", "Archer", "Sorceress"],       // Names
-    ["QmbRJACveMUERtQC4qPj8i8pErFWdCeTYrku1D1iejwxZp/valkyrie.png", // Images
-    "QmbRJACveMUERtQC4qPj8i8pErFWdCeTYrku1D1iejwxZp/archer.png", 
-    "QmbRJACveMUERtQC4qPj8i8pErFWdCeTYrku1D1iejwxZp/sorceress.png"],
+    ["QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/valkyrie.png", // Images
+    "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/archer.png", 
+    "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/sorceress.png"],
     [1000, 700, 500], // HP values
     [75, 100, 150], // Attack damage values
-    "Shadowbeast", // Boss name
-    "QmbRJACveMUERtQC4qPj8i8pErFWdCeTYrku1D1iejwxZp/boss.png", // Boss image
+    "Moloch", // Boss name
+    "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/moloch.png", // Boss image
     250000, // Boss hp
     100 // Boss attack damage
   );
