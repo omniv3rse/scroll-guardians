@@ -60,8 +60,8 @@ const App = () => {
 
     const checkNetwork = async () => {
       try { 
-        if (window.ethereum.networkVersion !== '534354') {
-          alert("Please connect to Scroll L2! (Pre-alpha)")
+        if (window.ethereum.networkVersion !== '5') {
+          alert("Please connect to Ethereum Goerli testnet!")
         }
       } catch(error) {
         console.log(error)

@@ -123,7 +123,7 @@ etherscan: {
 
 4. Verify
 ```
-npx hardhat verify --network goerli --constructor-args ./scripts/arguments.js 0xc9c56698d2Fd5eC0a684E177b1aE4EAD690b3AA0
+npx hardhat verify --network goerli --constructor-args ./scripts/arguments.js 0x78c17C468Ee4f0D14eB297a60B791c1f0662aF02
 ```
 
 
