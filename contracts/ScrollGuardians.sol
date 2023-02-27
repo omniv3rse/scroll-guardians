@@ -24,6 +24,16 @@ contract ScrollGuardians is ERC721 {
     uint attackDamage;
   }
 
+  function heal() public {
+    uint tokenId = nftHolders[msg.sender];
+    CharacterAttributes storage charAttributes = nftHolderAttributes[tokenId];
+    require(msg.sender == ownerOf(tokenId), "You must own this NFT to heal the character!");
+    require(charAttributes.maxHp > charAttributes.hp, "Your character already has full HP!");
+    require(pointsBalance[msg.sender] >= 30, "Not enough points to heal.");
+    pointsBalance[msg.sender] -= 30;
+    charAttributes.hp = charAttributes.maxHp;
+  }
+
   using Counters for Counters.Counter;
   Counters.Counter private _tokenIds;
 
@@ -31,6 +41,7 @@ contract ScrollGuardians is ERC721 {
 
   mapping(uint256 => CharacterAttributes) public nftHolderAttributes;
   mapping(address => uint256) public nftHolders;
+  mapping(address => uint256) public pointsBalance;
 
   event CharacterNFTMinted(address sender, uint256 tokenId, uint256 characterIndex);
   event AttackComplete(address sender, uint newBossHp, uint newPlayerHp);
@@ -189,6 +200,8 @@ contract ScrollGuardians is ERC721 {
         bigBoss.hp = bigBoss.hp - player.attackDamage;
         console.log("%s attacked boss. New boss hp: %s", player.name, bigBoss.hp);
       }
+      // whenever player attacks, increase their points balance by 10
+      pointsBalance[msg.sender] += 10;
     }        
 
     // Allow boss to attack player.
