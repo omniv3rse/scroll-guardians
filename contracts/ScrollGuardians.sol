@@ -183,23 +183,9 @@ contract ScrollGuardians is ERC721 {
     // Allow player to attack boss.
     if (bigBoss.hp < player.attackDamage) {
       bigBoss.hp = 0;
-    // } else {
-    //   bigBoss.hp = bigBoss.hp - player.attackDamage;
-    // }
+    // attack logic:
     } else {
-      if (randomInt(10) > 8) { // returns 0-9: 10% chance to deal crit damage
-
-        if (bigBoss.hp < 2*player.attackDamage) {
-          bigBoss.hp = 0;
-        } else {
-          bigBoss.hp = bigBoss.hp - 2*player.attackDamage;
-          console.log("%s attacked boss and dealt critical damage! New boss hp: %s", player.name, bigBoss.hp);
-        }
-
-      } else {
-        bigBoss.hp = bigBoss.hp - player.attackDamage;
-        console.log("%s attacked boss. New boss hp: %s", player.name, bigBoss.hp);
-      }
+      bigBoss.hp = bigBoss.hp - player.attackDamage;
       // whenever player attacks, increase their points balance by 10
       pointsBalance[msg.sender] += 10;
     }        
@@ -207,9 +193,7 @@ contract ScrollGuardians is ERC721 {
     // Allow boss to attack player.
     if (player.hp < bigBoss.attackDamage) {
       player.hp = 0;
-    // } else {
-    //   player.hp = player.hp - bigBoss.attackDamage;
-    // }
+    // attack logic:
     } else {
       if (randomInt(10) < 7) { // returns 0-9: 20% chance to evade attack
         player.hp = player.hp - bigBoss.attackDamage;
