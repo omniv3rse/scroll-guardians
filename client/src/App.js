@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import twitterLogo from './assets/twitter-logo.svg';
-import banner from './assets/banner.png'
+import banner from './assets/banner.jpg'
 import './App.css';
 import SelectCharacter from './Components/SelectCharacter';
 import { CONTRACT_ADDRESS, transformCharacterData } from './constants';
-import ScrollGuardians from './utils/ScrollGuardians.json';
+import BufficornBattle from './utils/BufficornBattle.json';
 import { ethers } from 'ethers';
 import Arena from './Components/Arena';
 import LoadingIndicator from './Components/LoadingIndicator';
@@ -44,7 +44,7 @@ const App = () => {
       const signer = provider.getSigner();
       const gameContract = new ethers.Contract(
         CONTRACT_ADDRESS,
-        ScrollGuardians.abi,
+        BufficornBattle.abi,
         signer
       );
 
@@ -137,7 +137,7 @@ const App = () => {
         <div className="connect-wallet-container">
           <img
             src={banner}
-            alt="Scroll Guardians by Adv3nture.xyz"
+            alt="Bufficorn Battle by Adv3nture.xyz"
           />
           <button
             className="cta-button connect-wallet-button"
@@ -191,8 +191,8 @@ const App = () => {
     <div className="App">
       <div className="container">
         <div className="header-container">
-          <p className="header gradient-text">📜 Scroll Guardians ⚔️</p>
-          <p className="sub-text">Team up to protect the Metaverse!</p>
+          <p className="header gradient-text">🦬 Bufficorn Battle ⚔️</p>
+          <p className="sub-text">Team up to bring back to Bull market!</p>
           {renderContent()}
         </div>
         <div className="footer-container">

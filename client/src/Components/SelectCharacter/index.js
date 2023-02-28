@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './SelectCharacter.css';
 import { ethers } from 'ethers';
 import { CONTRACT_ADDRESS, transformCharacterData } from '../../constants';
-import ScrollGuardians from '../../utils/ScrollGuardians.json';
+import BufficornBattle from '../../utils/BufficornBattle.json';
 import LoadingIndicator from "../../Components/LoadingIndicator";
 
 const SelectCharacter = ({ setCharacterNFT }) => {
@@ -36,7 +36,7 @@ const SelectCharacter = ({ setCharacterNFT }) => {
         const signer = provider.getSigner();
         const gameContract = new ethers.Contract(
             CONTRACT_ADDRESS,
-            ScrollGuardians.abi,
+            BufficornBattle.abi,
             signer
         );
     
@@ -142,7 +142,7 @@ const SelectCharacter = ({ setCharacterNFT }) => {
   
     return (
         <div className="select-character-container">
-            <h2>Mint Your Guardian. Choose wisely.</h2>
+            <h2>Mint Your Bufficorn. Choose wisely.</h2>
             {/* Only show this when there are characters in state */}
             {characters.length > 0 && (
                 <div className="character-grid">{renderCharacters()}</div>

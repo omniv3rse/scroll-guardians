@@ -1,12 +1,12 @@
 module.exports = [
-    ["Valkyrie", "Archer", "Sorceress"],
-    ["QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/valkyrie.png",
-    "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/archer.png", 
-    "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/sorceress.png"],
+    ["Eclipse", "Trinity", "Helios"],
+    ["Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn3.jpeg",
+    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn2.jpeg", 
+    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn1.jpeg"],
     [1000, 700, 500],
     [75, 100, 150],
-    "Moloch",
-    "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/moloch.png",
+    "Bearwhale",
+    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bearwhale.jpg",
     250000,
     100
 ]

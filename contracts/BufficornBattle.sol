@@ -13,7 +13,7 @@ import "./libraries/Base64.sol";
 
 import "hardhat/console.sol";
 
-contract ScrollGuardians is ERC721 {
+contract BufficornBattle is ERC721 {
 
   struct CharacterAttributes {
     uint characterIndex;
@@ -29,7 +29,7 @@ contract ScrollGuardians is ERC721 {
     CharacterAttributes storage charAttributes = nftHolderAttributes[tokenId];
     require(msg.sender == ownerOf(tokenId), "You must own this NFT to heal the character!");
     require(charAttributes.maxHp > charAttributes.hp, "Your character already has full HP!");
-    require(pointsBalance[msg.sender] >= 30, "Not enough points to heal.");
+    require(pointsBalance[msg.sender] >= 30, "Not enough points to heal. Attack at least 3 times first.");
     pointsBalance[msg.sender] -= 30;
     charAttributes.hp = charAttributes.maxHp;
   }
@@ -68,7 +68,7 @@ contract ScrollGuardians is ERC721 {
     uint bossHp,
     uint bossAttackDamage
   )
-    ERC721("Scroll Guardians", "SCROLL GUARDIAN")
+    ERC721("Bufficorn Battle", "BUFFICORN")
   {
     // Initialize the boss. Save it to global "bigBoss" state variable.
     bigBoss = BigBoss({
@@ -143,9 +143,9 @@ contract ScrollGuardians is ERC721 {
         abi.encodePacked(
         '{"name": "',
         charAttributes.name,
-        ' - Guardian #',
+        ' - Bufficorn #',
         Strings.toString(_tokenId),
-        '", "description": "This is an NFT that lets people play in the game Scroll Guardians by Adv3nture.xyz.", "image": "ipfs://',
+        '", "description": "This is an NFT that lets people play in the game Bufficorn Battle by Adv3nture.xyz.", "image": "ipfs://',
         charAttributes.imageURI,
         '", "attributes": [ { "trait_type": "Health Points", "value": ',strHp,', "max_value":',strMaxHp,'}, { "trait_type": "Attack Damage", "value": ',
         strAttackDamage,'} ]}'

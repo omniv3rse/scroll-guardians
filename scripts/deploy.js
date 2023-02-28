@@ -1,14 +1,14 @@
 const main = async () => {
-  const gameContractFactory = await hre.ethers.getContractFactory('ScrollGuardians');
+  const gameContractFactory = await hre.ethers.getContractFactory('BufficornBattle');
   const gameContract = await gameContractFactory.deploy(
-    ["Valkyrie", "Archer", "Sorceress"],       // Names
-    ["QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/valkyrie.png", // Images
-    "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/archer.png", 
-    "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/sorceress.png"],
+    ["Eclipse", "Trinity", "Helios"],       // Names
+    ["Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn3.jpeg", // Images
+    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn2.jpeg", 
+    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn1.jpeg"],
     [1000, 700, 500], // HP values
     [75, 100, 150], // Attack damage values
-    "Moloch", // Boss name
-    "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/moloch.png", // Boss image
+    "Bearwhale", // Boss name
+    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bearwhale.jpg", // Boss image
     250000, // Boss hp
     100 // Boss attack damage
   );

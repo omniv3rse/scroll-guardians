@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import { CONTRACT_ADDRESS, transformCharacterData } from '../../constants';
-import ScrollGuardians from '../../utils/ScrollGuardians.json';
+import BufficornBattle from '../../utils/BufficornBattle.json';
 import './Arena.css';
 import LoadingIndicator from "../../Components/LoadingIndicator";
 
@@ -49,7 +49,7 @@ const Arena = ({ characterNFT, setCharacterNFT, currentAccount }) => {
         const healTxn = await gameContract.heal();
         await healTxn.wait();
         console.log('healTxn:', healTxn);
-        window.alert(`Healed! (tx: ${healTxn.hash})`)
+        window.alert(`Healed! Refresh to update your HP. (tx: ${healTxn.hash})`)
         setHealState(false);
       }
     } catch (error) {
@@ -68,7 +68,7 @@ const Arena = ({ characterNFT, setCharacterNFT, currentAccount }) => {
       const signer = provider.getSigner();
       const gameContract = new ethers.Contract(
         CONTRACT_ADDRESS,
-        ScrollGuardians.abi,
+        BufficornBattle.abi,
         signer
       );
 
