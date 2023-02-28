@@ -60,14 +60,14 @@ const App = () => {
 
     const checkNetwork = async () => {
       try { 
-        if (window.ethereum.networkVersion !== '534354') {
-          alert("Please connect to Scroll L2! (Pre-alpha)")
+        if (window.ethereum.networkVersion !== '534353') {
+          alert("Please connect to Scroll L2 (Alpha)!")
         }
       } catch(error) {
         console.log(error)
       }
     }
-    
+
 
     /*
     * We only want to run this, if we have a connected wallet
