@@ -13,6 +13,7 @@ const Arena = ({ characterNFT, setCharacterNFT, currentAccount }) => {
   const [gameContract, setGameContract] = useState(null);
   const [boss, setBoss] = useState(null);
   const [attackState, setAttackState] = useState('');
+  const [healState, setHealState] = useState(false);
 
     // Toast state management
     const [showToast, setShowToast] = useState(false);
@@ -39,6 +40,24 @@ const Arena = ({ characterNFT, setCharacterNFT, currentAccount }) => {
       setAttackState('');
     }
   };
+
+  const handleHeal = async () => {
+    try {
+      if (gameContract) {
+        console.log('Healing...');
+        setHealState(true);
+        const healTxn = await gameContract.heal();
+        await healTxn.wait();
+        console.log('healTxn:', healTxn);
+        window.alert(`Healed! (tx: ${healTxn.hash})`)
+        setHealState(false);
+      }
+    } catch (error) {
+      console.error('Error healing:', error);
+      window.alert(error.reason);
+      setHealState(false);
+    }
+  }
 
   // UseEffects
   useEffect(() => {
@@ -175,6 +194,19 @@ const Arena = ({ characterNFT, setCharacterNFT, currentAccount }) => {
                 <h4>{`⚔️ Attack Damage: ${characterNFT.attackDamage}`}</h4>
                 </div>
             </div>
+            <br />
+              <div className="attack-container">
+                <button className="cta-button" onClick={handleHeal}>
+                  ❤️‍🩹 Heal (30 🪙)
+                </button>
+                {healState === true && (
+                  <div className="loading-indicator">
+                      <LoadingIndicator />
+                      <p>Healing 💫</p>
+                  </div>
+                )}
+              </div>
+              <br />
             </div>
             {/* <div className="active-players">
             <h2>Active Players</h2>
