@@ -192,7 +192,7 @@ const App = () => {
       <div className="container">
         <div className="header-container">
           <p className="header gradient-text">🦬 Bufficorn Battle ⚔️</p>
-          <p className="sub-text">Team up to bring back to Bull market!</p>
+          <p className="sub-text">Team up to bring back the Bull market!</p>
           {renderContent()}
         </div>
         <div className="footer-container">
