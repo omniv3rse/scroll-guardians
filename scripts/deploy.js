@@ -5,12 +5,12 @@ const main = async () => {
     ["QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/valkyrie.png", // Images
     "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/archer.png", 
     "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/sorceress.png"],
-    [1000, 700, 500], // HP values
-    [75, 100, 150], // Attack damage values
+    [4200, 3333, 1690], // HP values
+    [150, 200, 300], // Attack damage values
     "Moloch", // Boss name
     "QmRZDADWp8vhWDP9X1TiNTS4AKBhMqXdEZu94Bc2QuzxGD/moloch.png", // Boss image
-    250000, // Boss hp
-    100 // Boss attack damage
+    169000, // Boss hp
+    420 // Boss attack damage
   );
   await gameContract.deployed();
   console.log("Contract deployed to:", gameContract.address);
