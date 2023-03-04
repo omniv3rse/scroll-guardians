@@ -7,6 +7,6 @@ module.exports = [
     [75, 100, 150],
     "Bearwhale",
     "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bearwhale.jpg",
-    250000,
+    1000000,
     100
 ]

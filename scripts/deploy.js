@@ -9,7 +9,7 @@ const main = async () => {
     [75, 100, 150], // Attack damage values
     "Bearwhale", // Boss name
     "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bearwhale.jpg", // Boss image
-    250000, // Boss hp
+    1000000, // Boss hp
     100 // Boss attack damage
   );
   await gameContract.deployed();
