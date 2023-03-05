@@ -1,16 +1,16 @@
 const main = async () => {
   const gameContractFactory = await hre.ethers.getContractFactory('BufficornBattle');
   const gameContract = await gameContractFactory.deploy(
-    ["Eclipse", "Trinity", "Helios"],       // Names
-    ["Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn3.jpeg", // Images
-    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn2.jpeg", 
-    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn1.jpeg"],
-    [1000, 700, 500], // HP values
-    [75, 100, 150], // Attack damage values
-    "Bearwhale", // Boss name
-    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bearwhale.jpg", // Boss image
+    ["Eden", "Titan", "Harmony"],       // Names
+    ["QmZBcF7HyHwxNxq7oRLbiM3YdWBP6rkJMoEXbiiHbZXZrs/Eden.jpeg", // Images
+    "QmZBcF7HyHwxNxq7oRLbiM3YdWBP6rkJMoEXbiiHbZXZrs/Titan.jpeg", 
+    "QmZBcF7HyHwxNxq7oRLbiM3YdWBP6rkJMoEXbiiHbZXZrs/Harmony.jpeg"],
+    [6900, 5700, 4200], // HP values
+    [288, 333, 420], // Attack damage values
+    "Gary G.", // Boss name
+    "QmZBcF7HyHwxNxq7oRLbiM3YdWBP6rkJMoEXbiiHbZXZrs/Boss.jpeg", // Boss image
     1000000, // Boss hp
-    100 // Boss attack damage
+    1000 // Boss attack damage
   );
   await gameContract.deployed();
   console.log("Contract deployed to:", gameContract.address);

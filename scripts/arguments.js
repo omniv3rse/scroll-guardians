@@ -1,12 +1,12 @@
 module.exports = [
-    ["Eclipse", "Trinity", "Helios"],
-    ["Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn3.jpeg",
-    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn2.jpeg", 
-    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bufficorn1.jpeg"],
-    [1000, 700, 500],
-    [75, 100, 150],
-    "Bearwhale",
-    "Qmf2Mqq1DXWgina8ouWxqQe9zCAPH8FnkJpWcfniMxzJBH/bearwhale.jpg",
+    ["Eden", "Titan", "Harmony"],
+    ["QmZBcF7HyHwxNxq7oRLbiM3YdWBP6rkJMoEXbiiHbZXZrs/Eden.jpeg",
+    "QmZBcF7HyHwxNxq7oRLbiM3YdWBP6rkJMoEXbiiHbZXZrs/Titan.jpeg", 
+    "QmZBcF7HyHwxNxq7oRLbiM3YdWBP6rkJMoEXbiiHbZXZrs/Harmony.jpeg"],
+    [6900, 5700, 4200],
+    [288, 333, 420],
+    "Gary G.",
+    "QmZBcF7HyHwxNxq7oRLbiM3YdWBP6rkJMoEXbiiHbZXZrs/Boss.jpeg",
     1000000,
-    100
+    1000
 ]
