@@ -1,12 +1,12 @@
 module.exports = [
     ["Elvira", "Theodora", "Hemera"],
-    ["QmW1rERG4XreNfA4wGQXxyJderZkUuWAnox6P1mtMKaUD2/Elvira.jpg",
-    "QmW1rERG4XreNfA4wGQXxyJderZkUuWAnox6P1mtMKaUD2/Theodora.jpg", 
-    "QmW1rERG4XreNfA4wGQXxyJderZkUuWAnox6P1mtMKaUD2/Hemera.jpg"],
+    ["QmbVDAqzCG3HRgjJkjchmgotwJWuFGxY1RHRrAPywNsS3W/Elvira.jpg",
+    "QmbVDAqzCG3HRgjJkjchmgotwJWuFGxY1RHRrAPywNsS3W/Theodora.jpg", 
+    "QmbVDAqzCG3HRgjJkjchmgotwJWuFGxY1RHRrAPywNsS3W/Hemera.jpg"],
     [4200, 3333, 1690],
     [150, 200, 300],
     "Moloch",
-    "QmRSknGBPS9afQxT2gvjAZERqQV3NwGGx3X7JGrVcM6DSL/moloch.jpg",
+    "QmbVDAqzCG3HRgjJkjchmgotwJWuFGxY1RHRrAPywNsS3W/Moloch.jpg",
     690420,
     420
 ]

@@ -140,4 +140,4 @@ npx hardhat verify --network goerli --constructor-args ./scripts/arguments.js 0x
 
 6. Update Contract address to `./client/src/constants.js`.
 
-7. To verify, run `npx hardhat verify --network scrollAlpha --constructor-args ./scripts/arguments.js 0x1694Dc0bA8D091c773dF7f8ECDfa55b420024958`.
+7. To verify, run `npx hardhat verify --network scrollAlpha --constructor-args ./scripts/arguments.js 0x2514158C3752a4e06641Ac4DaC5ff492Bcfb2B73`.
